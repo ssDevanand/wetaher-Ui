@@ -7,5 +7,6 @@ STEPS TO RUN THE APPLICATION:
 
 1. **Install Dependencies**: Navigate to the project directory and run `npm install` to install all necessary dependencies.
 2. **Start the Development Server**: Run `ng serve` to start the Angular development server.
+3. Application available in http://localhost:4200/
 
 ![alt text](image.png)
