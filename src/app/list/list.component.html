@@ -1,0 +1,57 @@
+
+<h3 class="header">Weather Forecast Application</h3>
+
+<app-city-search></app-city-search>
+<div class="weather-container">
+  <button class="fetch-btn" (click)="weather()">Get Weather for Selected Cities</button>
+
+  <div class="table-wrapper">
+    <table class="weather-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th *ngFor="let date of this.weatherData?.dates">{{ date }}</th>
+          <th>High/Low (°C / °F)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ele of this.modifiedWeastherData">
+          <td class="city-name">{{ ele?.city }}</td>
+          <td>{{ ele?.day1?.AvgTemp }}°C / {{ toFahrenheit(ele?.day1?.AvgTemp) }}°F </td>
+          <td>{{ ele?.day2?.AvgTemp }}°C / {{ toFahrenheit(ele?.day2?.AvgTemp) }}°F </td>
+          <td>{{ ele?.day3?.AvgTemp }}°C / {{ toFahrenheit(ele?.day3?.AvgTemp) }}°F </td>
+          <td>{{ ele?.day4?.AvgTemp }}°C / {{ toFahrenheit(ele?.day4?.AvgTemp) }}°F </td>
+          <td>{{ ele?.day5?.AvgTemp }}°C / {{ toFahrenheit(ele?.day5?.AvgTemp) }}°F </td>
+          <td>{{ ele?.day6?.AvgTemp }}°C / {{ toFahrenheit(ele?.day6?.AvgTemp) }}°F </td>
+          <ng-container *ngIf="ele?.day7">
+            <td>{{ ele.day7.AvgTemp }}°C / {{ toFahrenheit(ele.day7.AvgTemp) }}°F </td>
+          </ng-container>
+          <td class="high-low-col">{{ averageCalc(ele).MaxTemp }}°C / {{ toFahrenheit(averageCalc(ele).MaxTemp) }}°F  <br> {{ averageCalc(ele).MinTemp }}°C / {{ toFahrenheit(averageCalc(ele).MinTemp) }}°F</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <button (click)="weather()">Get Weather for Selected Cities</button>
+
+<table style="width:100%">
+  <tr>
+    <th>City</th>
+    <th *ngFor="let date of this.weatherData?.dates">{{ date }}</th>
+    <th>High/Low (C / F)</th>
+  </tr>
+  <tr *ngFor="let ele of this.modifiedWeastherData">
+    <td>{{ ele?.city }}</td>
+    <td>{{ ele?.day1?.AvgTemp }}°C / {{ toFahrenheit(ele?.day1?.AvgTemp) }}°F </td>
+    <td>{{ ele?.day2?.AvgTemp }}°C / {{ toFahrenheit(ele?.day2?.AvgTemp) }}°F </td>
+    <td>{{ ele?.day3?.AvgTemp }}°C / {{ toFahrenheit(ele?.day3?.AvgTemp) }}°F </td>
+    <td>{{ ele?.day4?.AvgTemp }}°C / {{ toFahrenheit(ele?.day4?.AvgTemp) }}°F </td>
+    <td>{{ ele?.day5?.AvgTemp }}°C / {{ toFahrenheit(ele?.day5?.AvgTemp) }}°F </td>
+    <td>{{ ele?.day6?.AvgTemp }}°C / {{ toFahrenheit(ele?.day6?.AvgTemp) }}°F </td>
+    <ng-container *ngIf="ele?.day7">
+    <td>{{ ele.day7.AvgTemp }}°C / {{ toFahrenheit(ele.day7.AvgTemp) }}°F </td>
+    </ng-container>
+    <td>{{ averageCalc(ele).MaxTemp }}°C / {{ toFahrenheit(averageCalc(ele).MaxTemp) }}°F  / {{ averageCalc(ele).MinTemp }}°C / {{ toFahrenheit(averageCalc(ele).MinTemp) }}°F</td>
+  </tr>
+</table> -->

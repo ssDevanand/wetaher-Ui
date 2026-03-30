@@ -1,0 +1,99 @@
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.weather-container {
+  margin: 20px 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.fetch-btn {
+  background-color: #0275d8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.fetch-btn:hover {
+  background-color: #025aa5;
+}
+
+.fetch-btn:active {
+  transform: translateY(1px);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.weather-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+.weather-table th, 
+.weather-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #f1f5f9;
+}
+
+.weather-table th:last-child,
+.weather-table td:last-child {
+  border-right: none;
+}
+
+.weather-table th {
+  background-color: #f8fafc;
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weather-table tbody tr:nth-child(even) {
+  background-color: #fbfcfd;
+}
+
+.weather-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.weather-table td {
+  color: #475569;
+  font-size: 14px;
+}
+
+.city-name {
+  font-weight: 600;
+  color: #0f172a;
+  text-align: left;
+}
+
+.high-low-col {
+  font-weight: 500;
+  color: #1e293b;
+  background-color: #f8fafc; 
+}

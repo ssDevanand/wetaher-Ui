@@ -1,0 +1,22 @@
+<div class="city-search-container">
+
+
+    <div class="search-box">
+        <input type="text" [formControl]="searchControl" placeholder="Search a city and select" class="search-input" />
+        <div class="selected-cities">
+            <div class="city-chip" *ngFor="let city of selectedCities">
+                {{ city }}
+                <button class="remove-btn" (click)="removeCity(city)">&times;</button>
+            </div>
+        </div>
+        <ul class="dropdown-list" *ngIf="isDropdownOpen && searchResults.length > 0">
+            <li *ngFor="let city of searchResults" (click)="selectCity(city)" class="dropdown-item">
+                {{ city }}
+            </li>
+        </ul>
+
+        <div class="no-results" *ngIf="isDropdownOpen && searchResults.length === 0 && searchControl.value">
+            No cities found.
+        </div>
+    </div>
+</div>
